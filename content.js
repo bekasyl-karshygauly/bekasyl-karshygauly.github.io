@@ -134,7 +134,7 @@ window.RESUME = {
       {
         degree: "Электр жабдықтары · техник-электрик",
         org: "Каспий өңірінің көпсалалы жоғары колледжі", period: "2021–2025",
-        details: ["Үздік диплом", "Диплом қорғаудың орнына демонстрациялық емтихан (тек үздік студенттерге)"]
+        details: ["Үздік диплом", "Диплом қорғаудың орнына WorldSkills талаптары бойынша демонстрациялық емтихан: 100-ден 99 балл (тек үздік студенттерге)"]
       }
     ],
     projects: [
@@ -144,7 +144,7 @@ window.RESUME = {
     ],
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18.10.2026" },
-      { title: "Демонстрациялық емтихан сертификаты", issuer: "Электр жабдықтары · Каспий өңірінің көпсалалы жоғары колледжі", date: "2025" },
+      { title: "WorldSkills құзыреттілік паспорты · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", note: "Туған күні жасырылған", issuer: "Демонстрациялық емтихан · Электр монтаждау жұмыстары · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
       { title: "Үздік диплом", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Диплом нөмірлері жасырылған", issuer: "Каспий өңірінің көпсалалы жоғары колледжі · техник-электрик", date: "2025" }
     ]
   },
@@ -222,7 +222,7 @@ window.RESUME = {
       {
         degree: "Электрооборудование · техник-электрик",
         org: "Прикаспийский многопрофильный высший колледж", period: "2021–2025",
-        details: ["Диплом с отличием", "Демонстрационный экзамен вместо защиты диплома (допуск только для отличников)"]
+        details: ["Диплом с отличием", "Демонстрационный экзамен по стандартам WorldSkills вместо защиты диплома: 99 из 100 баллов (допуск только для отличников)"]
       }
     ],
     projects: [
@@ -232,7 +232,7 @@ window.RESUME = {
     ],
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18.10.2026" },
-      { title: "Сертификат демонстрационного экзамена", issuer: "Электрооборудование · Прикаспийский многопрофильный высший колледж", date: "2025" },
+      { title: "Паспорт компетенций WorldSkills · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", note: "Дата рождения скрыта", issuer: "Демонстрационный экзамен · Электромонтажная работа · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
       { title: "Диплом с отличием", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Номера диплома скрыты", issuer: "Прикаспийский многопрофильный высший колледж · техник-электрик", date: "2025" }
     ]
   },
@@ -310,7 +310,7 @@ window.RESUME = {
       {
         degree: "Electrical Equipment · Electrical Technician",
         org: "Caspian Multidisciplinary Higher College", period: "2021–2025",
-        details: ["Diploma with honors", "Demonstration exam instead of a thesis defense (honors students only)"]
+        details: ["Diploma with honors", "WorldSkills-standard demonstration exam instead of a thesis defense: 99 / 100 points (honors students only)"]
       }
     ],
     projects: [
@@ -320,7 +320,7 @@ window.RESUME = {
     ],
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18 Oct 2026" },
-      { title: "Demonstration Exam Certificate", issuer: "Electrical Equipment · Caspian Multidisciplinary Higher College", date: "2025" },
+      { title: "WorldSkills Skills Passport · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", note: "Date of birth is hidden", issuer: "Demonstration exam · Electrical Installation · WorldSkills Kazakhstan, TALAP", date: "18–20 Jun 2025" },
       { title: "Diploma with Honors", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Diploma numbers are hidden", issuer: "Caspian Multidisciplinary Higher College · Electrical Technician", date: "2025" }
     ]
   }
