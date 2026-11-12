@@ -144,7 +144,7 @@ window.RESUME = {
     ],
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18.10.2026" },
-      { title: "WorldSkills құзыреттілік паспорты · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", note: "Туған күні жасырылған", issuer: "Демонстрациялық емтихан · Электр монтаждау жұмыстары · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
+      { title: "WorldSkills құзыреттілік паспорты · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", issuer: "Демонстрациялық емтихан · Электр монтаждау жұмыстары · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
       { title: "Үздік диплом", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Диплом нөмірлері жасырылған", issuer: "Каспий өңірінің көпсалалы жоғары колледжі · техник-электрик", date: "2025" }
     ]
   },
@@ -232,7 +232,7 @@ window.RESUME = {
     ],
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18.10.2026" },
-      { title: "Паспорт компетенций WorldSkills · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", note: "Дата рождения скрыта", issuer: "Демонстрационный экзамен · Электромонтажная работа · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
+      { title: "Паспорт компетенций WorldSkills · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", issuer: "Демонстрационный экзамен · Электромонтажная работа · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
       { title: "Диплом с отличием", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Номера диплома скрыты", issuer: "Прикаспийский многопрофильный высший колледж · техник-электрик", date: "2025" }
     ]
   },
@@ -320,7 +320,7 @@ window.RESUME = {
     ],
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18 Oct 2026" },
-      { title: "WorldSkills Skills Passport · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", note: "Date of birth is hidden", issuer: "Demonstration exam · Electrical Installation · WorldSkills Kazakhstan, TALAP", date: "18–20 Jun 2025" },
+      { title: "WorldSkills Skills Passport · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", issuer: "Demonstration exam · Electrical Installation · WorldSkills Kazakhstan, TALAP", date: "18–20 Jun 2025" },
       { title: "Diploma with Honors", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Diploma numbers are hidden", issuer: "Caspian Multidisciplinary Higher College · Electrical Technician", date: "2025" }
     ]
   }
