@@ -123,6 +123,42 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
 .certs b{font-weight:600;font-size:14.5px;display:block;line-height:1.4}
 .certs span{color:var(--text-3);font-size:13px}
 .certs time{color:var(--text-3);font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:2px}
+.certs li.has-img{grid-template-columns:28px 1fr auto 112px}
+.cview{display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:0;border:0;background:none;font:500 12.5px/1.4 Inter,system-ui,sans-serif;color:var(--blue);cursor:pointer}
+.cview svg{width:12px;height:12px;transition:transform .25s var(--ease)}
+.cview:hover svg{transform:translate(2px,-2px)}
+.cthumb{padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;cursor:zoom-in;width:112px;aspect-ratio:1.42;transition:border-color .2s,box-shadow .25s}
+.cthumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.cthumb:hover{border-color:var(--blue-line);box-shadow:0 6px 18px rgba(31,94,219,.12)}
+.cthumb:hover img{transform:scale(1.06)}
+.cthumb:focus-visible,.cview:focus-visible,.vclose:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* certificate viewer */
+#viewer{border:0;padding:0;border-radius:14px;background:var(--paper);max-width:min(1100px,94vw);width:auto;max-height:92vh;overflow:hidden;box-shadow:0 30px 80px rgba(15,27,45,.35);color:var(--ink)}
+#viewer[open]{display:flex;flex-direction:column;animation:vIn .28s var(--ease)}
+#viewer::backdrop{background:rgba(15,27,45,.55);backdrop-filter:blur(3px);animation:bIn .28s ease}
+#viewer.closing{animation:vOut .18s ease forwards}
+#viewer.closing::backdrop{animation:bOut .18s ease forwards}
+.vhead{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 18px;border-bottom:1px solid var(--line)}
+.vhead b{font-size:14.5px;font-weight:600}
+.vhead span{font-size:12.5px;color:var(--text-3);flex:1}
+.vclose{margin-left:auto;width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.vclose:hover{border-color:var(--blue-line);color:var(--blue)}
+#viewer-img{display:block;max-width:100%;max-height:calc(92vh - 60px);object-fit:contain;background:#F4F7FB;margin:0 auto}
+@keyframes vIn{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes vOut{to{opacity:0;transform:translateY(6px) scale(.99)}}
+@keyframes bIn{from{opacity:0}to{opacity:1}}
+@keyframes bOut{to{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  #viewer[open]{animation:bIn .25s ease}
+  #viewer.closing{animation:bOut .18s ease forwards}
+  .cthumb img,.cview svg{transition:none}
+  .cthumb:hover img{transform:none}
+}
+@media screen and (max-width:640px){
+  .certs li.has-img{grid-template-columns:28px 1fr}
+  .certs li.has-img .cthumb{grid-column:2;width:150px;margin-top:4px}
+}
 .foot{margin-top:42px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--text-3);font-size:12px}
 .foot a:hover{color:var(--blue)}
 
@@ -146,6 +182,14 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
 .fbody .tags{margin-top:0}
 .factions{display:flex;gap:18px;margin-top:auto;padding-top:4px}
 .factions .ilink{margin-top:0}
+.fnote{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--text-3)}
+.fnote svg{width:13px;height:13px}
+.fcard.wide{grid-column:1/-1;display:grid;grid-template-columns:1.15fr 1fr}
+.fcard.wide .shot{border-bottom:0;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.fcard.wide .frame{flex:1;background:#14161b}
+.fcard.wide .shot img{height:100%}
+.fcard.wide .fbody{padding:20px 22px 22px}
+@media screen and (max-width:1000px){.fcard.wide{grid-template-columns:1fr}.fcard.wide .shot{border-right:0;border-bottom:1px solid var(--line)}.fcard.wide .shot img{height:auto}}
 @media screen{.card.is-featured{display:none}}
 @media (prefers-reduced-motion:reduce){.fcard:hover .shot img{transform:none}.shot img{transition:none}}
 
@@ -238,6 +282,8 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
   .certs b{font-size:9pt}.certs span{font-size:8pt}.certs time{font-size:7.8pt}
   .foot{display:none}
   .feat-section{display:none}
+  .cthumb,.cview,#viewer{display:none!important}
+  .certs li.has-img{grid-template-columns:6.5mm 1fr auto}
 }
 </style>
 </head>
@@ -259,6 +305,11 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
 
 <div class="sheet" id="resume"></div>
 
+<dialog id="viewer" aria-labelledby="viewer-title">
+  <div class="vhead"><b id="viewer-title"></b><span id="viewer-note"></span><button type="button" class="vclose" id="viewer-close" aria-label="Close"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <img id="viewer-img" alt="">
+</dialog>
+
 <noscript><p style="max-width:640px;margin:40px auto;color:#B4BDCC;padding:0 16px">This resume needs JavaScript. A PDF version is available: <a href="resume-en.pdf" style="color:#D4AF65">resume-en.pdf</a></p></noscript>
 
 <script src="content.js"></script>
@@ -275,7 +326,8 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
     github:'<svg class="i" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>',
     globe:'<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
     arrow:'<svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>',
-    award:'<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>'
+    award:'<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>',
+    lock:'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>'
   };
 
   // Fade-in: blocks fade up as they enter the screen; ones already visible on load fade in one after another.
@@ -358,26 +410,41 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
         </div>
       </article>`).join("");
     const host = url => { try { return new URL(url).host + new URL(url).pathname.replace(/\/$/, ""); } catch(e) { return url; } };
-    const feat = (S.featured || []).map(f => `
-      <article class="fcard">
-        <a class="shot" href="${esc(f.live)}" target="_blank" rel="noopener" aria-label="${esc(f.title)}: ${esc(u.live)}">
-          <div class="bar"><i></i><i></i><i></i><span>${esc(host(f.live))}</span></div>
-          <div class="frame"><img src="${esc(f.image)}" width="1200" height="750" loading="lazy" alt="${esc(f.title)}"></div>
-        </a>
+    const feat = (S.featured || []).map(f => {
+      const shotInner = `
+          <div class="bar"><i></i><i></i><i></i><span>${esc(f.bar || host(f.live))}</span></div>
+          <div class="frame"><img src="${esc(f.image)}" width="1200" height="750" loading="lazy" alt="${esc(f.title)}"></div>`;
+      const shot = f.live
+        ? `<a class="shot" href="${esc(f.live)}" target="_blank" rel="noopener" aria-label="${esc(f.title)}: ${esc(u.live)}">${shotInner}</a>`
+        : `<div class="shot">${shotInner}</div>`;
+      const actions = [
+        f.live ? `<a class="ilink" href="${esc(f.live)}" target="_blank" rel="noopener">${esc(u.live)}${icon.arrow}</a>` : "",
+        f.repo ? `<a class="ilink" href="${esc(f.repo)}" target="_blank" rel="noopener">${esc(u.code)}${icon.arrow}</a>` : "",
+        f.note ? `<span class="fnote">${icon.lock}${esc(f.note[lang])}</span>` : ""
+      ].join("");
+      return `
+      <article class="fcard${f.wide ? " wide" : ""}">
+        ${shot}
         <div class="fbody">
           <div class="ftop"><h3>${esc(f.title)}</h3><span class="status">${esc(f.status[lang])}</span></div>
           <p>${esc(f.desc[lang])}</p>
           <div class="tags">${f.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-          <div class="factions">
-            <a class="ilink" href="${esc(f.live)}" target="_blank" rel="noopener">${esc(u.live)}${icon.arrow}</a>
-            <a class="ilink" href="${esc(f.repo)}" target="_blank" rel="noopener">${esc(u.code)}${icon.arrow}</a>
-          </div>
+          <div class="factions">${actions}</div>
         </div>
-      </article>`).join("");
+      </article>`;
+    }).join("");
     const proj = d.projects.map(p => `
       <div class="card${p.featured ? " is-featured" : ""}"><h3>${esc(p.title)}</h3><div class="meta">${esc(p.meta)}</div><p>${esc(p.text)}</p>${link(p.link)}</div>`).join("");
-    const certs = d.certificates.map(c => `
-      <li><span class="ic">${icon.award}</span><div><b>${esc(c.title)}</b><span>${esc(c.issuer)}</span></div><time>${esc(c.date)}</time></li>`).join("");
+    const certs = d.certificates.map(c => {
+      const open = c.image ? `data-img="${esc(c.image)}" data-title="${esc(c.title)}" data-note="${esc(c.note || "")}"` : "";
+      return `
+      <li class="${c.image ? "has-img" : ""}">
+        <span class="ic">${icon.award}</span>
+        <div><b>${esc(c.title)}</b><span>${esc(c.issuer)}</span>${c.image ? `<button type="button" class="cview" ${open}>${esc(u.view)}${icon.arrow}</button>` : ""}</div>
+        <time>${esc(c.date)}</time>
+        ${c.image ? `<button type="button" class="cthumb" ${open} aria-label="${esc(u.view)}: ${esc(c.title)}"><img src="${esc(c.thumb || c.image)}" width="360" height="254" loading="lazy" alt=""></button>` : ""}
+      </li>`;
+    }).join("");
 
     const main = `
       <main>
@@ -429,6 +496,26 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
     setTimeout(() => { render(lang, false); requestAnimationFrame(() => sheet.classList.remove("swap")); }, 220);
   }));
   document.getElementById("btn-print").addEventListener("click", () => window.print());
+
+  // Certificate viewer: click a thumbnail or "view original" to see the scan.
+  const viewer = document.getElementById("viewer");
+  const vimg = document.getElementById("viewer-img");
+  document.getElementById("resume").addEventListener("click", ev => {
+    const b = ev.target.closest("[data-img]");
+    if (!b) return;
+    vimg.src = b.dataset.img; vimg.alt = b.dataset.title;
+    document.getElementById("viewer-title").textContent = b.dataset.title;
+    document.getElementById("viewer-note").textContent = b.dataset.note || "";
+    document.getElementById("viewer-close").setAttribute("aria-label", R[lang].ui.close);
+    if (viewer.showModal) viewer.showModal(); else window.open(b.dataset.img, "_blank");
+  });
+  const closeViewer = () => {
+    viewer.classList.add("closing");
+    setTimeout(() => { viewer.classList.remove("closing"); viewer.close(); }, 180);
+  };
+  document.getElementById("viewer-close").addEventListener("click", closeViewer);
+  viewer.addEventListener("click", ev => { if (ev.target === viewer) closeViewer(); });
+  viewer.addEventListener("cancel", ev => { ev.preventDefault(); closeViewer(); });
   // If the prebuilt PDF is missing (e.g. opened as a local file after edits), fall back to the print dialog.
   document.getElementById("btn-pdf").addEventListener("click", ev => {
     if (location.protocol === "file:") { ev.preventDefault(); window.print(); }
