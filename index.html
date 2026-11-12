@@ -126,6 +126,29 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
 .foot{margin-top:42px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--text-3);font-size:12px}
 .foot a:hover{color:var(--blue)}
 
+/* featured projects */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fcard{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper);display:flex;flex-direction:column;transition:border-color .25s,box-shadow .3s,opacity .7s var(--ease),transform .7s var(--ease)}
+.fcard:hover{border-color:var(--blue-line);box-shadow:0 12px 32px rgba(31,94,219,.10)}
+.shot{display:block;background:#EEF2F8;border-bottom:1px solid var(--line);overflow:hidden}
+.shot .bar{display:flex;align-items:center;gap:5px;height:26px;padding:0 11px;background:#F6F8FB;border-bottom:1px solid var(--line)}
+.shot .bar i{width:7px;height:7px;border-radius:50%;background:#D3DCE8}
+.shot .bar span{margin-left:8px;font-size:10.5px;color:var(--text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot .frame{overflow:hidden}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform .7s var(--ease)}
+.fcard:hover .shot img{transform:scale(1.035)}
+.fbody{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.ftop{display:flex;justify-content:space-between;align-items:baseline;gap:6px 12px;flex-wrap:wrap}
+.fcard h3{margin:0;font-size:17px;font-weight:600;letter-spacing:-.015em}
+.status{font-size:11.5px;color:var(--text-3);display:inline-flex;align-items:center;gap:6px}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:#22A06B;box-shadow:0 0 0 3px rgba(34,160,107,.14)}
+.fbody p{margin:0;font-size:13.5px;color:var(--text-2);line-height:1.6}
+.fbody .tags{margin-top:0}
+.factions{display:flex;gap:18px;margin-top:auto;padding-top:4px}
+.factions .ilink{margin-top:0}
+@media screen{.card.is-featured{display:none}}
+@media (prefers-reduced-motion:reduce){.fcard:hover .shot img{transform:none}.shot img{transition:none}}
+
 /* fade animations: elements with .fx fade up when they enter the screen */
 .fx{opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0ms)}
 .fx.in{opacity:1;transform:none}
@@ -154,6 +177,7 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
   .hello .m-photo{display:block;grid-row:span 3}
 }
 @media screen and (max-width:640px){
+  .feat{grid-template-columns:1fr}
   .sheet{margin:0;border-radius:0;border-left:0;border-right:0;box-shadow:none}
   aside{display:block;padding:28px 16px 32px}
   aside .sblock + .sblock{margin-top:26px}
@@ -213,6 +237,7 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
   .certs .ic{width:6.5mm;height:6.5mm}
   .certs b{font-size:9pt}.certs span{font-size:8pt}.certs time{font-size:7.8pt}
   .foot{display:none}
+  .feat-section{display:none}
 }
 </style>
 </head>
@@ -256,7 +281,7 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
   // Fade-in: blocks fade up as they enter the screen; ones already visible on load fade in one after another.
   let io = null;
   function setupFade(animate){
-    const els = document.querySelectorAll("#resume .photo, #resume .sblock, #resume .hello, #resume .mlabel, #resume .summary, #resume .item, #resume .card, #resume .certs li");
+    const els = document.querySelectorAll("#resume .photo, #resume .sblock, #resume .hello, #resume .mlabel, #resume .summary, #resume .item, #resume .card, #resume .fcard, #resume .certs li");
     if (io) io.disconnect();
     if (!animate || !("IntersectionObserver" in window)) {
       els.forEach(el => el.classList.add("fx", "in")); return;
@@ -332,8 +357,25 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
           <ul class="bul">${e.details.map(b => `<li>${esc(b)}</li>`).join("")}</ul>
         </div>
       </article>`).join("");
+    const host = url => { try { return new URL(url).host + new URL(url).pathname.replace(/\/$/, ""); } catch(e) { return url; } };
+    const feat = (S.featured || []).map(f => `
+      <article class="fcard">
+        <a class="shot" href="${esc(f.live)}" target="_blank" rel="noopener" aria-label="${esc(f.title)}: ${esc(u.live)}">
+          <div class="bar"><i></i><i></i><i></i><span>${esc(host(f.live))}</span></div>
+          <div class="frame"><img src="${esc(f.image)}" width="1200" height="750" loading="lazy" alt="${esc(f.title)}"></div>
+        </a>
+        <div class="fbody">
+          <div class="ftop"><h3>${esc(f.title)}</h3><span class="status">${esc(f.status[lang])}</span></div>
+          <p>${esc(f.desc[lang])}</p>
+          <div class="tags">${f.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+          <div class="factions">
+            <a class="ilink" href="${esc(f.live)}" target="_blank" rel="noopener">${esc(u.live)}${icon.arrow}</a>
+            <a class="ilink" href="${esc(f.repo)}" target="_blank" rel="noopener">${esc(u.code)}${icon.arrow}</a>
+          </div>
+        </div>
+      </article>`).join("");
     const proj = d.projects.map(p => `
-      <div class="card"><h3>${esc(p.title)}</h3><div class="meta">${esc(p.meta)}</div><p>${esc(p.text)}</p>${link(p.link)}</div>`).join("");
+      <div class="card${p.featured ? " is-featured" : ""}"><h3>${esc(p.title)}</h3><div class="meta">${esc(p.meta)}</div><p>${esc(p.text)}</p>${link(p.link)}</div>`).join("");
     const certs = d.certificates.map(c => `
       <li><span class="ic">${icon.award}</span><div><b>${esc(c.title)}</b><span>${esc(c.issuer)}</span></div><time>${esc(c.date)}</time></li>`).join("");
 
@@ -349,6 +391,7 @@ h1{font-size:clamp(34px,4.6vw,48px);line-height:1.05;letter-spacing:-.035em;font
           </p>
         </header>
         <section class="section"><h2 class="mlabel">${esc(u.profile)}</h2><p class="summary">${esc(d.summary)}</p></section>
+        ${feat ? `<section class="section feat-section"><h2 class="mlabel">${esc(u.featured)}</h2><div class="feat">${feat}</div></section>` : ""}
         <section class="section"><h2 class="mlabel">${esc(u.experience)}</h2><div class="items">${exp}</div></section>
         <section class="section"><h2 class="mlabel">${esc(u.education)}</h2><div class="items">${edu}</div></section>
         <section class="section"><h2 class="mlabel">${esc(u.projects)}</h2><div class="grid2">${proj}</div></section>

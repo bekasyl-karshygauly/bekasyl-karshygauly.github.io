@@ -16,7 +16,35 @@ window.RESUME = {
     github: { value: "github.com/bekasyl-karshygauly", href: "https://github.com/bekasyl-karshygauly" },
     site: { value: "bekasyl-karshygauly.github.io", href: "https://bekasyl-karshygauly.github.io/" },
     pdf: { kk: "resume-kk.pdf", ru: "resume-ru.pdf", en: "resume-en.pdf" },
-    pdfName: { kk: "Bekasyl_Karshygauly_CV_KZ.pdf", ru: "Bekasyl_Karshygauly_CV_RU.pdf", en: "Bekasyl_Karshygauly_CV_EN.pdf" }
+    pdfName: { kk: "Bekasyl_Karshygauly_CV_KZ.pdf", ru: "Bekasyl_Karshygauly_CV_RU.pdf", en: "Bekasyl_Karshygauly_CV_EN.pdf" },
+    featured: [
+      {
+        title: "Math Universe",
+        image: "assets/preview-math-universe.jpg",
+        live: "https://bekasyl-karshygauly.github.io/math-universe/",
+        repo: "https://github.com/bekasyl-karshygauly/math-universe",
+        tags: ["Next.js", "TypeScript", "Supabase", "KaTeX"],
+        status: { kk: "Жұмыс істеп тұр · жаңа нұсқа 11.2026", ru: "Работает · новая версия 11.2026", en: "Live · new version Nov 2026" },
+        desc: {
+          kk: "Үш тілдегі интерактивті математика платформасы: 5 бөлім, үш деңгейлі 19 сабақ, 3D графиктер, калькуляторлар мен тесттер.",
+          ru: "Интерактивная платформа по математике на трёх языках: 5 разделов, 19 уроков в трёх уровнях глубины, 3D-графики, калькуляторы и тесты.",
+          en: "An interactive maths platform in three languages: 5 sections, 19 lessons in three levels of depth, 3D graphs, calculators and quizzes."
+        }
+      },
+      {
+        title: "Qarzhy",
+        image: "assets/preview-qarzhy.jpg",
+        live: "https://qarzhy-nu.vercel.app",
+        repo: "https://github.com/bekasyl-karshygauly/qarzhy",
+        tags: ["Next.js", "PostgreSQL", "Prisma", "Gemini API"],
+        status: { kk: "MVP · ерте қолжетімділік", ru: "MVP · ранний доступ", en: "MVP · early access" },
+        desc: {
+          kk: "Теңгедегі жеке қаржы есебі: кірістер мен шығыстар, графиктер, қаржылық мақсаттар және ЖИ көмекшісі. Тіркелу, қорғалған сессиялар, PostgreSQL дерекқоры.",
+          ru: "Учёт личных финансов в тенге: доходы и расходы, графики, финансовые цели и ИИ-помощник. Регистрация, защищённые сессии, база PostgreSQL.",
+          en: "Personal finance tracking in tenge: income and expenses, charts, savings goals and an AI assistant. Sign-up, secure sessions, PostgreSQL database."
+        }
+      }
+    ]
   },
 
   kk: {
@@ -26,7 +54,7 @@ window.RESUME = {
       contacts: "Байланыс", skills: "Дағдылар", languages: "Тілдер", extra: "Қосымша ақпарат",
       profile: "Профиль", experience: "Тәжірибе", education: "Білім", projects: "Жобалар мен жетістіктер",
       certificates: "Сертификаттар", phone: "Телефон", email: "Email", city: "Қала", telegram: "Telegram", github: "GitHub",
-      open: "Ашу"
+      open: "Ашу", featured: "Таңдаулы жобалар", live: "Сайтты ашу", code: "GitHub"
     },
     name: "Бекасыл Қаршығаұлы",
     title: "Junior Software Engineer · автоматтандыру және веб-әзірлеу",
@@ -97,7 +125,7 @@ window.RESUME = {
     ],
     projects: [
       { title: "ICPC Kazakhstan Qualification 2026", meta: "Аймақтық кезеңге өтті · 18.10.2026", text: "Халықаралық студенттік бағдарламалау олимпиадасының іріктеу кезеңі." },
-      { title: "Qarzhy", meta: "Next.js · PostgreSQL · Prisma", text: "Теңгедегі жеке қаржы есебіне арналған веб-қосымша: кірістер мен шығыстар, графиктер, қаржылық мақсаттар және ЖИ көмекшісі.", link: { label: "qarzhy-nu.vercel.app", href: "https://qarzhy-nu.vercel.app" } },
+      { title: "Qarzhy", featured: true, meta: "Next.js · PostgreSQL · Prisma", text: "Теңгедегі жеке қаржы есебіне арналған веб-қосымша: кірістер мен шығыстар, графиктер, қаржылық мақсаттар және ЖИ көмекшісі.", link: { label: "qarzhy-nu.vercel.app", href: "https://qarzhy-nu.vercel.app" } },
       { title: "GPA 4.00 · 2026 көктемі", meta: "Атырау мұнай және газ университеті", text: "Барлық пән «A» бағасымен, оның төртеуі 100 балл: Математика 2, Физика 1, қазақ тілі, шетел тілі." }
     ],
     certificates: [
@@ -114,7 +142,7 @@ window.RESUME = {
       contacts: "Контакты", skills: "Навыки", languages: "Языки", extra: "Дополнительно",
       profile: "Профиль", experience: "Опыт", education: "Образование", projects: "Проекты и достижения",
       certificates: "Сертификаты", phone: "Телефон", email: "Email", city: "Город", telegram: "Telegram", github: "GitHub",
-      open: "Открыть"
+      open: "Открыть", featured: "Избранные проекты", live: "Открыть сайт", code: "GitHub"
     },
     name: "Бекасыл Қаршығаұлы",
     title: "Junior Software Engineer · автоматизация и веб-разработка",
@@ -185,7 +213,7 @@ window.RESUME = {
     ],
     projects: [
       { title: "ICPC Kazakhstan Qualification 2026", meta: "Прошёл на региональный этап · 18.10.2026", text: "Отборочный этап международной студенческой олимпиады по программированию." },
-      { title: "Qarzhy", meta: "Next.js · PostgreSQL · Prisma", text: "Веб-приложение для учёта личных финансов в тенге: доходы и расходы, графики, финансовые цели и ИИ-помощник.", link: { label: "qarzhy-nu.vercel.app", href: "https://qarzhy-nu.vercel.app" } },
+      { title: "Qarzhy", featured: true, meta: "Next.js · PostgreSQL · Prisma", text: "Веб-приложение для учёта личных финансов в тенге: доходы и расходы, графики, финансовые цели и ИИ-помощник.", link: { label: "qarzhy-nu.vercel.app", href: "https://qarzhy-nu.vercel.app" } },
       { title: "GPA 4.00 · весна 2026", meta: "Атырауский университет нефти и газа", text: "Все дисциплины на «A», четыре из них на 100 баллов: Математика 2, Физика 1, казахский язык, иностранный язык." }
     ],
     certificates: [
@@ -202,7 +230,7 @@ window.RESUME = {
       contacts: "Contact", skills: "Skills", languages: "Languages", extra: "Additional",
       profile: "Profile", experience: "Experience", education: "Education", projects: "Projects & Achievements",
       certificates: "Certificates", phone: "Phone", email: "Email", city: "City", telegram: "Telegram", github: "GitHub",
-      open: "Open"
+      open: "Open", featured: "Featured Projects", live: "Live site", code: "GitHub"
     },
     name: "Bekasyl Karshygauly",
     title: "Junior Software Engineer · Automation & Web",
@@ -273,7 +301,7 @@ window.RESUME = {
     ],
     projects: [
       { title: "ICPC Kazakhstan Qualification 2026", meta: "Qualified to the Regional Contest · 18 Oct 2026", text: "Qualification round of the International Collegiate Programming Contest." },
-      { title: "Qarzhy", meta: "Next.js · PostgreSQL · Prisma", text: "Personal finance web app in tenge: income and expenses, charts, savings goals and an AI assistant.", link: { label: "qarzhy-nu.vercel.app", href: "https://qarzhy-nu.vercel.app" } },
+      { title: "Qarzhy", featured: true, meta: "Next.js · PostgreSQL · Prisma", text: "Personal finance web app in tenge: income and expenses, charts, savings goals and an AI assistant.", link: { label: "qarzhy-nu.vercel.app", href: "https://qarzhy-nu.vercel.app" } },
       { title: "GPA 4.00 · Spring 2026", meta: "Atyrau Oil and Gas University", text: "Every course graded A, four of them at 100/100: Mathematics 2, Physics 1, Kazakh language, Foreign language." }
     ],
     certificates: [
