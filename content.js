@@ -20,7 +20,7 @@ window.RESUME = {
     featured: [
       {
         title: "Math Universe",
-        image: "assets/preview-math-universe.jpg",
+        image: "assets/preview-math-universe.jpg?v=20261113",
         live: "https://bekasyl-karshygauly.github.io/math-universe/",
         repo: "https://github.com/bekasyl-karshygauly/math-universe",
         tags: ["Next.js", "TypeScript", "Supabase", "KaTeX"],
