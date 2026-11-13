@@ -115,7 +115,7 @@ window.RESUME = {
       {
         role: "Волонтер", org: "AI HUB клубы · Атырау мұнай және газ университеті", period: "",
         bullets: [
-          "Клуб жарыстарын ұйымдастыруға көмектестім.",
+          "Университетте өткен Digital Week аясында AI HUB клубының іс-шараларын ұйымдастыруға көмектестім, ректордың алғыс хатымен марапатталдым.",
           "Екі апта сайын өтетін SAFI QUIZ зияткерлік ойынының тұрақты қатысушысымын."
         ],
         tags: []
@@ -146,7 +146,8 @@ window.RESUME = {
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18.10.2026" },
       { title: "WorldSkills құзыреттілік паспорты · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", issuer: "Демонстрациялық емтихан · Электр монтаждау жұмыстары · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
-      { title: "Үздік диплом", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Диплом нөмірлері жасырылған", issuer: "Каспий өңірінің көпсалалы жоғары колледжі · техник-электрик", date: "2025" }
+      { title: "Үздік диплом", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Диплом нөмірлері жасырылған", issuer: "Каспий өңірінің көпсалалы жоғары колледжі · техник-электрик", date: "2025" },
+      { title: "Алғыс хат · Digital Week", image: "assets/cert-ai-hub.jpg", thumb: "assets/cert-ai-hub-thumb.jpg", issuer: "AI HUB · Атырау мұнай және газ университеті, ректор Г.Т. Шакуликова", date: "" }
     ]
   },
 
@@ -204,7 +205,7 @@ window.RESUME = {
       {
         role: "Волонтёр", org: "Клуб AI HUB · Атырауский университет нефти и газа", period: "",
         bullets: [
-          "Помогал в организации соревнований клуба.",
+          "Помогал в организации мероприятий Digital Week в университете, отмечен благодарственным письмом ректора.",
           "Постоянный участник интеллектуальной игры SAFI QUIZ, которая проходит раз в две недели."
         ],
         tags: []
@@ -235,7 +236,8 @@ window.RESUME = {
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18.10.2026" },
       { title: "Паспорт компетенций WorldSkills · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", issuer: "Демонстрационный экзамен · Электромонтажная работа · WorldSkills Kazakhstan, TALAP", date: "18–20.06.2025" },
-      { title: "Диплом с отличием", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Номера диплома скрыты", issuer: "Прикаспийский многопрофильный высший колледж · техник-электрик", date: "2025" }
+      { title: "Диплом с отличием", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Номера диплома скрыты", issuer: "Прикаспийский многопрофильный высший колледж · техник-электрик", date: "2025" },
+      { title: "Благодарственное письмо · Digital Week", image: "assets/cert-ai-hub.jpg", thumb: "assets/cert-ai-hub-thumb.jpg", issuer: "AI HUB · Атырауский университет нефти и газа им. С. Утебаева, ректор Г.Т. Шакуликова", date: "" }
     ]
   },
 
@@ -293,7 +295,7 @@ window.RESUME = {
       {
         role: "Volunteer", org: "AI HUB club · Atyrau Oil and Gas University", period: "",
         bullets: [
-          "Helped run the club's competitions.",
+          "Helped organise Digital Week events at the university; awarded a letter of appreciation signed by the Rector.",
           "Regular player at SAFI QUIZ, a university quiz held every two weeks."
         ],
         tags: []
@@ -324,7 +326,8 @@ window.RESUME = {
     certificates: [
       { title: "ICPC Certificate of Achievement", image: "assets/cert-icpc.jpg", thumb: "assets/cert-icpc-thumb.jpg", issuer: "The 2026 ICPC Kazakhstan Qualification · Qualified to Regional Contest", date: "18 Oct 2026" },
       { title: "WorldSkills Skills Passport · 99 / 100", image: "assets/cert-worldskills.jpg", thumb: "assets/cert-worldskills-thumb.jpg", issuer: "Demonstration exam · Electrical Installation · WorldSkills Kazakhstan, TALAP", date: "18–20 Jun 2025" },
-      { title: "Diploma with Honors", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Diploma numbers are hidden", issuer: "Caspian Multidisciplinary Higher College · Electrical Technician", date: "2025" }
+      { title: "Diploma with Honors", image: "assets/cert-diploma.jpg", thumb: "assets/cert-diploma-thumb.jpg", note: "Diploma numbers are hidden", issuer: "Caspian Multidisciplinary Higher College · Electrical Technician", date: "2025" },
+      { title: "Letter of Appreciation · Digital Week", image: "assets/cert-ai-hub.jpg", thumb: "assets/cert-ai-hub-thumb.jpg", issuer: "AI HUB · Safi Utebayev Atyrau Oil and Gas University, signed by Rector G.T. Shakulikova", date: "" }
     ]
   }
 };
