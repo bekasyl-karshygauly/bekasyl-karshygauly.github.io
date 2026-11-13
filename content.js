@@ -26,9 +26,9 @@ window.RESUME = {
         tags: ["Next.js", "TypeScript", "Supabase", "KaTeX"],
         status: { kk: "Жұмыс істеп тұр · жаңа нұсқа 11.2026", ru: "Работает · новая версия 11.2026", en: "Live · new version Nov 2026" },
         desc: {
-          kk: "Үш тілдегі интерактивті математика платформасы: 5 бөлім, үш деңгейлі 19 сабақ және 8 дәрістен тұратын «Математика 1» университет курсы, 3D графиктер, калькуляторлар мен тесттер.",
-          ru: "Интерактивная платформа по математике на трёх языках: 5 разделов, 19 уроков в трёх уровнях глубины и университетский курс «Математика 1» из 8 лекций, 3D-графики, калькуляторы и тесты.",
-          en: "An interactive maths platform in three languages: 5 sections, 19 lessons in three levels of depth and an 8-lecture university course, Mathematics 1, plus 3D graphs, calculators and quizzes."
+          kk: "Үш тілдегі интерактивті математика платформасы: 5 бөлім, үш деңгейлі 19 сабақ және бейнесабақтары бар 15 дәрістен тұратын «Математика 1» университет курсы, 3D графиктер, калькуляторлар мен тесттер.",
+          ru: "Интерактивная платформа по математике на трёх языках: 5 разделов, 19 уроков в трёх уровнях глубины и университетский курс «Математика 1» из 15 лекций с видеоуроками, 3D-графики, калькуляторы и тесты.",
+          en: "An interactive maths platform in three languages: 5 sections, 19 lessons in three levels of depth and a 15-lecture university course, Mathematics 1, with video lessons, plus 3D graphs, calculators and quizzes."
         }
       },
       {
@@ -95,7 +95,7 @@ window.RESUME = {
         role: "Негізін қалаушы және әзірлеуші", org: "Math Universe · жеке жоба", period: "09.2026 – қазір",
         bullets: [
           "Қазақ, орыс және ағылшын тілдеріндегі интерактивті математика платформасы: 5 бөлім, әр сабақ үш тереңдік деңгейінде.",
-          "Бірінші семестр бағдарламасы бойынша «Математика 1» университет курсы: 8 дәріс, талдаулар, жаттықтырғыш, СӨЖ нұсқаларын тексеру және үш тілдегі терминдер сөздігі.",
+          "Бірінші семестр бағдарламасы бойынша «Математика 1» университет курсы: 15 дәріс, тесттері бар бейнесабақтар, талдаулар, жаттықтырғыш, интерактивті тақта, СӨЖ нұсқаларын тексеру және үш тілдегі терминдер сөздігі.",
           "Графиктер мен 3D визуализациялар, калькуляторлар, тесттер, конспектілер, ЖИ көмекшісі; Supabase арқылы авторизация.",
           "Жобаны бір беттік HTML-ден Next.js + TypeScript-ке көшірдім, GitHub Actions арқылы GitHub Pages-ке жариялау.",
           "Жоспар: 2026 жылдың соңында университетке, 2027 көктемінде бүкіл елге таныстыру."
@@ -184,7 +184,7 @@ window.RESUME = {
         role: "Основатель и разработчик", org: "Math Universe · личный проект", period: "09.2026 – н. в.",
         bullets: [
           "Интерактивная платформа по математике на казахском, русском и английском: 5 разделов, каждый урок в трёх уровнях глубины.",
-          "Университетский курс «Математика 1» по программе первого семестра: 8 лекций, разборы, тренажёр, проверка вариантов СРС и словарь терминов на трёх языках.",
+          "Университетский курс «Математика 1» по программе первого семестра: 15 лекций, видеоуроки с тестами, разборы, тренажёр, интерактивная доска, проверка вариантов СРС и словарь терминов на трёх языках.",
           "Графики и 3D-визуализации, калькуляторы, тесты, конспекты, ИИ-помощник; авторизация через Supabase.",
           "Перевёл проект с одностраничного HTML на Next.js + TypeScript, деплой на GitHub Pages через GitHub Actions.",
           "План: презентация университету в конце 2026 года, запуск для всей страны весной 2027-го."
@@ -273,7 +273,7 @@ window.RESUME = {
         role: "Founder & Developer", org: "Math Universe · personal project", period: "09.2026 – present",
         bullets: [
           "Interactive mathematics platform in Kazakh, Russian and English: 5 sections, every lesson in three levels of depth.",
-          "University course Mathematics 1 following the first-semester syllabus: 8 lectures, worked examples, a trainer, self-study variant checks and a trilingual glossary.",
+          "University course Mathematics 1 following the first-semester syllabus: 15 lectures, video lessons with quizzes, worked examples, a trainer, an interactive whiteboard, self-study variant checks and a trilingual glossary.",
           "Graphs and 3D visualizations, calculators, quizzes, notes and an AI helper; authentication with Supabase.",
           "Migrated the project from a single HTML page to Next.js + TypeScript, deployed to GitHub Pages with GitHub Actions.",
           "Roadmap: present to the university by the end of 2026, launch nationwide in spring 2027."
